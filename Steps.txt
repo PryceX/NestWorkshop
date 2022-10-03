@@ -1,0 +1,31 @@
+- Install dependecies
+ 1. Create new Nest project using Nest CLI: npm i -g @nestjs/cli, nest new project-name
+ 2. Run this to work with db:  npm install --save @nestjs/sequelize sequelize sequelize-typescript pg, npm install --save-dev @types/sequelize
+
+- Create db in PgAdmin
+- Add tables and some data there. Today we will work just with user entity
+(I used this SQL: 
+  create table users (
+    id TEXT not null primary key,
+      login TEXT not null,
+      password TEXT not null,
+      age INTEGER not null
+  );
+)
+- Add user directory with code: module, controller, service + dto and entities directories
+- Add db configuration to app.module.ts
+- Add some code to interact with db to user directory
+- Add validation DTO to create a user
+ 1. Install dependecies: npm i --save class-validator class-transformer
+ 2. Enable validation in main.ts file
+ 3. Add code to dto`s directory
+
+- Test everything via postman
+
+To improve:
+ - Add logger as a dependency, do not use console.log (it`s your 5 hw)
+ - Add custom errors for services and custom http exceptions to controllers.
+ - Add group entity as user entity
+ - Add many-to-many relationship 
+ - Add transactions
+ - Find a way to not make two same dto`s (crete and update user). Hint: partial typescript
