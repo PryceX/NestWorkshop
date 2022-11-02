@@ -1,0 +1,19 @@
+Workshop outline
+ - Fist part - run NestJS in Docker container without database at all
+ - Second part - run Nest application + Postgres using Docker compose
+
+First part
+1. Install Docker to your machine
+2. Add Dockerfile to the root of your project
+3. Add .dockerignore file
+4. Build Docker image: docker build -t nest-standalone . (-t stands for tag and you can write here whatever you want)
+5. Check your image: docker images
+6. Run your docker container using builded image: docker run -p 3000:3000 nest-standalone
+(after running this command we can make requests directly to localhost - http://localhost:3000 )
+7. If you want to stop container, you can run: docker stop {container id} - check container id running command: docker ps
+
+Second part
+1. Change app.module database connection options
+2. Run: docker-compose up 
+3. Stop and remove all running containers: docker-compose down
+4. Try to use our Posgres database in the container!

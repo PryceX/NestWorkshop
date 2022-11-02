@@ -85,4 +85,18 @@ export class UserController {
       );
     }
   }
+
+  @Get('docker-workshop/hello')
+  async helloFunction() {
+    console.log('Hello route for the docker workshop!');
+    try {
+      return 'Hello guys!!!';
+    } catch (error) {
+      console.log(error);
+      throw new HttpException(
+        `Cannot get a response with this error: ${error.message}`,
+        400,
+      );
+    }
+  }
 }
